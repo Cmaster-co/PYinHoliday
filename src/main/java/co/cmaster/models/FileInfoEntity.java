@@ -10,8 +10,8 @@ import java.sql.Timestamp;
 @Table(name = "file_info", schema = "pyholiday", catalog = "")
 public class FileInfoEntity {
     private int id;
-    private String file;
-    private String user;
+    private int file;
+    private int user;
     private String action;
     private String filename;
     private Timestamp time;
@@ -27,22 +27,22 @@ public class FileInfoEntity {
     }
 
     @Basic
-    @Column(name = "file", nullable = false, length = 255)
-    public String getFile() {
+    @Column(name = "file", nullable = false)
+    public int getFile() {
         return file;
     }
 
-    public void setFile(String file) {
+    public void setFile(int file) {
         this.file = file;
     }
 
     @Basic
-    @Column(name = "user", nullable = false, length = 255)
-    public String getUser() {
+    @Column(name = "user", nullable = false)
+    public int getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(int user) {
         this.user = user;
     }
 
@@ -84,8 +84,8 @@ public class FileInfoEntity {
         FileInfoEntity that = (FileInfoEntity) o;
 
         if (id != that.id) return false;
-        if (file != null ? !file.equals(that.file) : that.file != null) return false;
-        if (user != null ? !user.equals(that.user) : that.user != null) return false;
+        if (file != that.file) return false;
+        if (user != that.user) return false;
         if (action != null ? !action.equals(that.action) : that.action != null) return false;
         if (filename != null ? !filename.equals(that.filename) : that.filename != null) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
@@ -96,8 +96,8 @@ public class FileInfoEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (file != null ? file.hashCode() : 0);
-        result = 31 * result + (user != null ? user.hashCode() : 0);
+        result = 31 * result + file;
+        result = 31 * result + user;
         result = 31 * result + (action != null ? action.hashCode() : 0);
         result = 31 * result + (filename != null ? filename.hashCode() : 0);
         result = 31 * result + (time != null ? time.hashCode() : 0);

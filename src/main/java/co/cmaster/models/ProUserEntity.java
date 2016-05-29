@@ -9,9 +9,11 @@ import javax.persistence.*;
 @Table(name = "pro_user", schema = "pyholiday", catalog = "")
 public class ProUserEntity {
     private int id;
-    private String project;
-    private String user;
+    private int project;
+    private int user;
     private int admin;
+    private ProjectEntity projectByProject;
+    private UserEntity userByUser;
 
     @Id
     @Column(name = "Id", nullable = false)
@@ -24,22 +26,22 @@ public class ProUserEntity {
     }
 
     @Basic
-    @Column(name = "project", nullable = false, length = 255)
-    public String getProject() {
+    @Column(name = "project", nullable = false)
+    public int getProject() {
         return project;
     }
 
-    public void setProject(String project) {
+    public void setProject(int project) {
         this.project = project;
     }
 
     @Basic
-    @Column(name = "user", nullable = false, length = 255)
-    public String getUser() {
+    @Column(name = "user", nullable = false)
+    public int getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(int user) {
         this.user = user;
     }
 
@@ -61,9 +63,9 @@ public class ProUserEntity {
         ProUserEntity that = (ProUserEntity) o;
 
         if (id != that.id) return false;
+        if (project != that.project) return false;
+        if (user != that.user) return false;
         if (admin != that.admin) return false;
-        if (project != null ? !project.equals(that.project) : that.project != null) return false;
-        if (user != null ? !user.equals(that.user) : that.user != null) return false;
 
         return true;
     }
@@ -71,9 +73,29 @@ public class ProUserEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (project != null ? project.hashCode() : 0);
-        result = 31 * result + (user != null ? user.hashCode() : 0);
+        result = 31 * result + project;
+        result = 31 * result + user;
         result = 31 * result + admin;
         return result;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "project", referencedColumnName = "Id", nullable = false, insertable = false, updatable = false)
+    public ProjectEntity getProjectByProject() {
+        return projectByProject;
+    }
+
+    public void setProjectByProject(ProjectEntity projectByProject) {
+        this.projectByProject = projectByProject;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user", referencedColumnName = "Id", nullable = false, insertable = false, updatable = false)
+    public UserEntity getUserByUser() {
+        return userByUser;
+    }
+
+    public void setUserByUser(UserEntity userByUser) {
+        this.userByUser = userByUser;
     }
 }

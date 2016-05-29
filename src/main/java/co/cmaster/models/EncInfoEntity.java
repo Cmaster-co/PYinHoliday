@@ -10,8 +10,8 @@ import java.sql.Timestamp;
 @Table(name = "enc_info", schema = "pyholiday", catalog = "")
 public class EncInfoEntity {
     private int id;
-    private String enc;
-    private String user;
+    private int enc;
+    private int user;
     private String action;
     private double money;
     private Timestamp time;
@@ -27,22 +27,22 @@ public class EncInfoEntity {
     }
 
     @Basic
-    @Column(name = "enc", nullable = false, length = 255)
-    public String getEnc() {
+    @Column(name = "enc", nullable = false)
+    public int getEnc() {
         return enc;
     }
 
-    public void setEnc(String enc) {
+    public void setEnc(int enc) {
         this.enc = enc;
     }
 
     @Basic
-    @Column(name = "user", nullable = false, length = 255)
-    public String getUser() {
+    @Column(name = "user", nullable = false)
+    public int getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(int user) {
         this.user = user;
     }
 
@@ -84,9 +84,9 @@ public class EncInfoEntity {
         EncInfoEntity that = (EncInfoEntity) o;
 
         if (id != that.id) return false;
+        if (enc != that.enc) return false;
+        if (user != that.user) return false;
         if (Double.compare(that.money, money) != 0) return false;
-        if (enc != null ? !enc.equals(that.enc) : that.enc != null) return false;
-        if (user != null ? !user.equals(that.user) : that.user != null) return false;
         if (action != null ? !action.equals(that.action) : that.action != null) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
 
@@ -98,8 +98,8 @@ public class EncInfoEntity {
         int result;
         long temp;
         result = id;
-        result = 31 * result + (enc != null ? enc.hashCode() : 0);
-        result = 31 * result + (user != null ? user.hashCode() : 0);
+        result = 31 * result + enc;
+        result = 31 * result + user;
         result = 31 * result + (action != null ? action.hashCode() : 0);
         temp = Double.doubleToLongBits(money);
         result = 31 * result + (int) (temp ^ (temp >>> 32));

@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "file", schema = "pyholiday", catalog = "")
 public class FileEntity {
     private int id;
-    private String project;
+    private int project;
     private String filepath;
     private String more;
 
@@ -24,12 +24,12 @@ public class FileEntity {
     }
 
     @Basic
-    @Column(name = "project", nullable = false, length = 255)
-    public String getProject() {
+    @Column(name = "project", nullable = false)
+    public int getProject() {
         return project;
     }
 
-    public void setProject(String project) {
+    public void setProject(int project) {
         this.project = project;
     }
 
@@ -61,7 +61,7 @@ public class FileEntity {
         FileEntity that = (FileEntity) o;
 
         if (id != that.id) return false;
-        if (project != null ? !project.equals(that.project) : that.project != null) return false;
+        if (project != that.project) return false;
         if (filepath != null ? !filepath.equals(that.filepath) : that.filepath != null) return false;
         if (more != null ? !more.equals(that.more) : that.more != null) return false;
 
@@ -71,7 +71,7 @@ public class FileEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (project != null ? project.hashCode() : 0);
+        result = 31 * result + project;
         result = 31 * result + (filepath != null ? filepath.hashCode() : 0);
         result = 31 * result + (more != null ? more.hashCode() : 0);
         return result;

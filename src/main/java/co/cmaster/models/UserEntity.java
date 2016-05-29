@@ -1,6 +1,7 @@
 package co.cmaster.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Administrator on 2016/5/29 0029.
@@ -18,6 +19,7 @@ public class UserEntity {
     private int admin;
     private int status;
     private String more;
+    private Collection<ProUserEntity> proUsersById;
 
     @Id
     @Column(name = "Id", nullable = false)
@@ -153,5 +155,14 @@ public class UserEntity {
         result = 31 * result + status;
         result = 31 * result + (more != null ? more.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "userByUser")
+    public Collection<ProUserEntity> getProUsersById() {
+        return proUsersById;
+    }
+
+    public void setProUsersById(Collection<ProUserEntity> proUsersById) {
+        this.proUsersById = proUsersById;
     }
 }

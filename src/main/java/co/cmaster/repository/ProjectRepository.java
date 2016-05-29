@@ -18,4 +18,8 @@ public interface ProjectRepository extends JpaRepository<ProjectEntity, Integer>
     @Transactional
     @Query("update ProjectEntity pr set pr.passwd=:ppasswd, pr.location=:plocation where pr.id=:pid")
     public void updateProject(@Param("ppasswd") String passwd, @Param("plocation") String location, @Param("pid") Integer id);
+
+    @Query("select p from ProjectEntity p where p.id = ?1 and p.passwd = ?2")
+    ProjectEntity findByPP(Integer id, String passwd);
+
 }

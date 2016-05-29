@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Table(name = "enc", schema = "pyholiday", catalog = "")
 public class EncEntity {
     private int id;
-    private String project;
+    private int project;
     private double money;
     private Timestamp time;
     private String more;
@@ -26,12 +26,12 @@ public class EncEntity {
     }
 
     @Basic
-    @Column(name = "project", nullable = false, length = 255)
-    public String getProject() {
+    @Column(name = "project", nullable = false)
+    public int getProject() {
         return project;
     }
 
-    public void setProject(String project) {
+    public void setProject(int project) {
         this.project = project;
     }
 
@@ -73,8 +73,8 @@ public class EncEntity {
         EncEntity encEntity = (EncEntity) o;
 
         if (id != encEntity.id) return false;
+        if (project != encEntity.project) return false;
         if (Double.compare(encEntity.money, money) != 0) return false;
-        if (project != null ? !project.equals(encEntity.project) : encEntity.project != null) return false;
         if (time != null ? !time.equals(encEntity.time) : encEntity.time != null) return false;
         if (more != null ? !more.equals(encEntity.more) : encEntity.more != null) return false;
 
@@ -86,7 +86,7 @@ public class EncEntity {
         int result;
         long temp;
         result = id;
-        result = 31 * result + (project != null ? project.hashCode() : 0);
+        result = 31 * result + project;
         temp = Double.doubleToLongBits(money);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (time != null ? time.hashCode() : 0);

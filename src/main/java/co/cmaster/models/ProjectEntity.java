@@ -2,6 +2,7 @@ package co.cmaster.models;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 /**
  * Created by Administrator on 2016/5/29 0029.
@@ -16,9 +17,11 @@ public class ProjectEntity {
     private String more;
     private Timestamp time;
     private int status;
+    private Collection<ProUserEntity> proUsersById;
 
     @Id
     @Column(name = "Id", nullable = false)
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -115,5 +118,14 @@ public class ProjectEntity {
         result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + status;
         return result;
+    }
+
+    @OneToMany(mappedBy = "projectByProject")
+    public Collection<ProUserEntity> getProUsersById() {
+        return proUsersById;
+    }
+
+    public void setProUsersById(Collection<ProUserEntity> proUsersById) {
+        this.proUsersById = proUsersById;
     }
 }

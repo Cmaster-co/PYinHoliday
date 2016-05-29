@@ -34,8 +34,8 @@
             <ul id="menu-nav" class="menu"><li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-4"><a href="http://www.yzipi.com/">首页</a></li>
                 <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-31"><a title="运营经验" href="http://www.yzipi.com/category/experience">小组</a>
                     <ul class="sub-menu">
-                        <li id="menu-item-3218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3218"><a href="/addproject">创建小组</a></li>
-                        <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="http://www.yzipi.com/category/experience/user-study">加入小组</a></li>
+                        <li id="menu-item-3218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3218"><a href="/createProject">创建小组</a></li>
+                        <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="/joinProject/">加入小组</a></li>
                         <li id="menu-item-3222" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3222"><a href="http://www.yzipi.com/category/experience/marketing">营销推广</a></li>
                         <li id="menu-item-3186" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3186"><a href="http://www.yzipi.com/category/experience/view">名家看点</a></li>
                         <li id="menu-item-3219" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3219"><a href="http://www.yzipi.com/category/experience/entrepreneurship-manage">创业/管理</a></li>
@@ -60,30 +60,29 @@
         </form>
     </div>
     <div id="container">
-        <section class="list">
-            <a href="http://www.yzipi.com/3789.htm#comments" class="up" >2</a>      <div class="mecc">
-            <h2 class="mecctitle"> <a href="http://www.yzipi.com/3789.htm" target="_blank">
-                【深度好文】如何选择自已未来的职业!
-            </a> </h2>
-            <address class="meccaddress">
-                <time>
-                    05.10        </time>
-                -
-                <a href="http://www.yzipi.com/category/experience/development" rel="category tag">职场成长</a>        - 阅
-                3,150 &nbsp;&nbsp;<span class="zan">推荐</span>　
-            </address>
-        </div>
-       <span class="titleimg">
-       <a href="http://www.yzipi.com/3789.htm" target="_blank">
-<img width="270" height="165" src="http://www.yzipi.com/wp-content/uploads/2016/05/gt-270x165.png" class="attachment-thumbnail wp-post-image" alt="gt" /></a>
-      </span>
+        <c:if test="${!empty projectList}">
+            <c:forEach items="${projectList}" var="project">
+                <section class="list">
+                    <a href="http://www.yzipi.com/3699.htm#comments" class="up" >3</a>      <div class="mecc">
+                    <h2 class="mecctitle"> <a href="http://www.yzipi.com/3699.htm" target="_blank">
+                        ${project.proname}          </a> </h2>
+                    <address class="meccaddress">
+                        <time>
+                            04.04        </time>
+                        -
+                        <a href="http://www.yzipi.com/category/experience/development" rel="category tag">${project.location}</a>        -
+                        <a href="/joinProject/${project.id}" rel="category tag">加入小组</a></address>
+                </div>
+                <span class="titleimg"><a href="http://www.yzipi.com/3699.htm" target="_blank">
+                    <img width="270" height="165" src="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr-270x165.png" class="attachment-thumbnail wp-post-image" alt="grgrgr" />            </a> </span>
 
-            <p>在选择管理咨询作为全职工作之前，我也曾经好几次试错：创业、智库、私人银行、医疗公司。我很愿意跟各种行业的前辈聊天，也经常会思考什么样的问题才是有意义的。“到底应该选择什么样的行业和公司？”以下这7个问题，就是我曾经问过或者未来会问自己的问题。虽说人定胜天，是金子&#8230;</p>
-
-            <div class="clear"></div>
-        </section>
-        <div class="clear"></div>
-
+                    <p>${project.more}</p>
+                    <div class="clear"></div>
+                </section>
+                <div class="clear"></div>
+                <div class="clear"></div>
+            </c:forEach>
+        </c:if>
         <!--list-->
         <div class="pagenavi">
             <span class="page-numbers">1 / 36 </span> <span class='page-numbers current'>1</span> <a class='page-numbers' href='http://www.yzipi.com/page/2' title='第 2 页'>2</a> <a class='page-numbers' href='http://www.yzipi.com/page/3' title='第 3 页'>3</a> <span class="page-numbers">...</span><a class='page-numbers' href='http://www.yzipi.com/page/36' title='最末页'>36</a> <a class='page-numbers' href='http://www.yzipi.com/page/2' title='下一页'>下一页</a>     </div>

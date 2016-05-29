@@ -33,6 +33,7 @@ public class ProjectController {
 
     @RequestMapping(value = "/admin/projects/addP", method = RequestMethod.POST)
     public String addProjectPost(@ModelAttribute("project") ProjectEntity projectEntity){
+        projectEntity.setTime(new java.sql.Timestamp(System.currentTimeMillis()));
         projectRepository.saveAndFlush(projectEntity);
         return "redirect:/admin/projects";
     }

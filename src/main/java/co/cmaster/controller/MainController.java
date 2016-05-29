@@ -1,5 +1,7 @@
 package co.cmaster.controller;
+import co.cmaster.models.ProjectEntity;
 import co.cmaster.models.UserEntity;
+import co.cmaster.repository.ProjectRepository;
 import co.cmaster.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/5/26 0026.
@@ -19,8 +22,13 @@ public class MainController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    ProjectRepository projectRepository;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index() {
+    public String index(ModelMap modelMap) {
+        List<ProjectEntity> projectList = projectRepository.findAll();
+        modelMap.addAttribute("projectList", projectList);
         return "home";
     }
 
