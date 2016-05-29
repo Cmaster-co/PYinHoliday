@@ -3,7 +3,7 @@ package co.cmaster.models;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2016/5/28 0028.
+ * Created by Administrator on 2016/5/29 0029.
  */
 @Entity
 @Table(name = "pro_user", schema = "pyholiday", catalog = "")
@@ -11,7 +11,7 @@ public class ProUserEntity {
     private int id;
     private String project;
     private String user;
-    private int status;
+    private int admin;
 
     @Id
     @Column(name = "Id", nullable = false)
@@ -44,13 +44,13 @@ public class ProUserEntity {
     }
 
     @Basic
-    @Column(name = "status", nullable = false)
-    public int getStatus() {
-        return status;
+    @Column(name = "admin", nullable = false)
+    public int getAdmin() {
+        return admin;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setAdmin(int admin) {
+        this.admin = admin;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class ProUserEntity {
         ProUserEntity that = (ProUserEntity) o;
 
         if (id != that.id) return false;
-        if (status != that.status) return false;
+        if (admin != that.admin) return false;
         if (project != null ? !project.equals(that.project) : that.project != null) return false;
         if (user != null ? !user.equals(that.user) : that.user != null) return false;
 
@@ -73,7 +73,7 @@ public class ProUserEntity {
         int result = id;
         result = 31 * result + (project != null ? project.hashCode() : 0);
         result = 31 * result + (user != null ? user.hashCode() : 0);
-        result = 31 * result + status;
+        result = 31 * result + admin;
         return result;
     }
 }

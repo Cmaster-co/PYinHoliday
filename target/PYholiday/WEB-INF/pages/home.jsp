@@ -32,10 +32,10 @@
         <!--logo-->
         <nav class="header-nav">
             <ul id="menu-nav" class="menu"><li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-4"><a href="http://www.yzipi.com/">首页</a></li>
-                <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-31"><a title="运营经验" href="http://www.yzipi.com/category/experience">经验</a>
+                <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-31"><a title="运营经验" href="http://www.yzipi.com/category/experience">小组</a>
                     <ul class="sub-menu">
-                        <li id="menu-item-3218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3218"><a href="http://www.yzipi.com/category/experience/product">产品分析</a></li>
-                        <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="http://www.yzipi.com/category/experience/user-study">用户研究</a></li>
+                        <li id="menu-item-3218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3218"><a href="/addproject">创建小组</a></li>
+                        <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="http://www.yzipi.com/category/experience/user-study">加入小组</a></li>
                         <li id="menu-item-3222" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3222"><a href="http://www.yzipi.com/category/experience/marketing">营销推广</a></li>
                         <li id="menu-item-3186" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3186"><a href="http://www.yzipi.com/category/experience/view">名家看点</a></li>
                         <li id="menu-item-3219" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3219"><a href="http://www.yzipi.com/category/experience/entrepreneurship-manage">创业/管理</a></li>

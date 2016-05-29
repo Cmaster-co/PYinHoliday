@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2016/5/28 0028.
+ * Created by Administrator on 2016/5/29 0029.
  */
 @Entity
 @Table(name = "file_info", schema = "pyholiday", catalog = "")

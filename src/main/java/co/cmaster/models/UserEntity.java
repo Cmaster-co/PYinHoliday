@@ -3,7 +3,7 @@ package co.cmaster.models;
 import javax.persistence.*;
 
 /**
- * Created by Administrator on 2016/5/28 0028.
+ * Created by Administrator on 2016/5/29 0029.
  */
 @Entity
 @Table(name = "user", schema = "pyholiday", catalog = "")

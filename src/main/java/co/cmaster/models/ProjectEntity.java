@@ -1,9 +1,10 @@
 package co.cmaster.models;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 /**
- * Created by Administrator on 2016/5/28 0028.
+ * Created by Administrator on 2016/5/29 0029.
  */
 @Entity
 @Table(name = "project", schema = "pyholiday", catalog = "")
@@ -13,6 +14,8 @@ public class ProjectEntity {
     private String passwd;
     private String location;
     private String more;
+    private Timestamp time;
+    private int status;
 
     @Id
     @Column(name = "Id", nullable = false)
@@ -64,6 +67,26 @@ public class ProjectEntity {
         this.more = more;
     }
 
+    @Basic
+    @Column(name = "time", nullable = false)
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
+    }
+
+    @Basic
+    @Column(name = "status", nullable = false)
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,10 +95,12 @@ public class ProjectEntity {
         ProjectEntity that = (ProjectEntity) o;
 
         if (id != that.id) return false;
+        if (status != that.status) return false;
         if (proname != null ? !proname.equals(that.proname) : that.proname != null) return false;
         if (passwd != null ? !passwd.equals(that.passwd) : that.passwd != null) return false;
         if (location != null ? !location.equals(that.location) : that.location != null) return false;
         if (more != null ? !more.equals(that.more) : that.more != null) return false;
+        if (time != null ? !time.equals(that.time) : that.time != null) return false;
 
         return true;
     }
@@ -87,6 +112,8 @@ public class ProjectEntity {
         result = 31 * result + (passwd != null ? passwd.hashCode() : 0);
         result = 31 * result + (location != null ? location.hashCode() : 0);
         result = 31 * result + (more != null ? more.hashCode() : 0);
+        result = 31 * result + (time != null ? time.hashCode() : 0);
+        result = 31 * result + status;
         return result;
     }
 }
