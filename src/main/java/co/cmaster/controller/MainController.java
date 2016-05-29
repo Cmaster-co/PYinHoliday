@@ -21,7 +21,7 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        return "index";
+        return "home";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -35,9 +35,10 @@ public class MainController {
         if (ue != null) {
             ue.setPasswd("");
             httpSession.setAttribute("user", ue);
-            return "index";
+            if (ue.getAdmin() == 1) return "redirect:/admin/admin";
+            else return "redirect:/";
         }else{
-            return "failLogin";
+            return "/failLogin";
         }
     }
 
