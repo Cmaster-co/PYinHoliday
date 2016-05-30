@@ -39,7 +39,7 @@ public class UserController {
     public String  joinProjectId(@PathVariable("id") Integer projectid, HttpSession httpSession, ModelMap modelMap){
         ProjectEntity project = projectRepository.findOne(projectid);
         modelMap.addAttribute("project",project);
-        return "project/joinProject";
+        return "user/joinProject";
     }
 
     @RequestMapping(value = "/joinProjectP", method = RequestMethod.POST)
@@ -60,7 +60,7 @@ public class UserController {
 
     @RequestMapping(value = "/createProject", method = RequestMethod.GET)
     public String createProject(){
-        return "project/createProject";
+        return "user/createProject";
     }
 
     @RequestMapping(value = "/createProjectP", method = RequestMethod.POST)

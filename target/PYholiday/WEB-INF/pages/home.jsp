@@ -136,18 +136,10 @@
         <div class="sitebar_list">
             <h4 class="sitebar_title">我的小组</h4>
             <ul class="sitebar_list_ul">
-                <li><a href="http://www.yzipi.com/1505.htm" title="从泡妞段子看你的资金运作水平" target="_blank">
-                    从泡妞段子看你的资金运作水平</a></li>
-                <li><a href="http://www.yzipi.com/3268.htm" title="如何圈着网站用户，柚子皮成立一年精度总结" target="_blank">
-                    如何圈着网站用户，柚子皮成立一年精度总结</a></li>
-                <li><a href="http://www.yzipi.com/326.htm" title="识别好公司还是烂公司的三张图" target="_blank">
-                    识别好公司还是烂公司的三张图</a></li>
-                <li><a href="http://www.yzipi.com/2420.htm" title="【小编推荐】企业优秀人才的标准 - 简单" target="_blank">
-                    【小编推荐】企业优秀人才的标准 - 简单</a></li>
-                <li><a href="http://www.yzipi.com/1613.htm" title="牛逼的标题如何起?不能说的秘密(10条)" target="_blank">
-                    牛逼的标题如何起?不能说的秘密(10条)</a></li>
-                <li><a href="http://www.yzipi.com/2344.htm" title="你现在的位置决定了你未来的位置？" target="_blank">
-                    你现在的位置决定了你未来的位置？</a></li>
+                <c:forEach items="${myprojectList}" var="myproject">
+                    <li><a href="http://www.yzipi.com/1505.htm" title="从泡妞段子看你的资金运作水平" target="_blank">
+                        ${myproject.proname}</a></li>
+                </c:forEach>
             </ul>
         </div>
         </c:if>

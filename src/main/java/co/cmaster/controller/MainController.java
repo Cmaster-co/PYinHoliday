@@ -1,6 +1,8 @@
 package co.cmaster.controller;
+import co.cmaster.models.ProUserEntity;
 import co.cmaster.models.ProjectEntity;
 import co.cmaster.models.UserEntity;
+import co.cmaster.repository.ProUserRepository;
 import co.cmaster.repository.ProjectRepository;
 import co.cmaster.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,10 +28,23 @@ public class MainController {
     @Autowired
     ProjectRepository projectRepository;
 
+    @Autowired
+    ProUserRepository proUserRepository;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(ModelMap modelMap) {
+    public String index(ModelMap modelMap, HttpSession httpSession) {
         List<ProjectEntity> projectList = projectRepository.findAll();
         modelMap.addAttribute("projectList", projectList);
+        UserEntity user = (UserEntity)httpSession.getAttribute("user");
+        if(user != null){
+            List<ProUserEntity> myprouserList = proUserRepository.findByUser(user.getId());
+            List<ProjectEntity> myprojectList = new ArrayList<ProjectEntity>();
+            for (ProUserEntity p:myprouserList
+                 ) {
+                myprojectList.add(projectRepository.findOne(p.getProject()));
+            }
+            modelMap.addAttribute("myprojectList", myprojectList);
+        }
         return "home";
     }
 
