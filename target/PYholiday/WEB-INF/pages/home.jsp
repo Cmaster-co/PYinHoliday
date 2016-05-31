@@ -64,11 +64,11 @@
             <c:forEach items="${projectList}" var="project">
                 <section class="list">
                     <a href="http://www.yzipi.com/3699.htm#comments" class="up" >3</a>      <div class="mecc">
-                    <h2 class="mecctitle"> <a href="http://www.yzipi.com/3699.htm" target="_blank">
+                    <h2 class="mecctitle"> <a href="/project/${project.id}" >
                         ${project.proname}          </a> </h2>
                     <address class="meccaddress">
                         <time>
-                            04.04        </time>
+                            ${project.time}        </time>
                         -
                         <a href="http://www.yzipi.com/category/experience/development" rel="category tag">${project.location}</a>        -
                         <a href="/joinProject/${project.id}" rel="category tag">加入小组</a></address>
@@ -137,7 +137,7 @@
             <h4 class="sitebar_title">我的小组</h4>
             <ul class="sitebar_list_ul">
                 <c:forEach items="${myprojectList}" var="myproject">
-                    <li><a href="http://www.yzipi.com/1505.htm" title="从泡妞段子看你的资金运作水平" target="_blank">
+                    <li><a href="/project/${myproject.id}" title="${myproject.proname}">
                         ${myproject.proname}</a></li>
                 </c:forEach>
             </ul>

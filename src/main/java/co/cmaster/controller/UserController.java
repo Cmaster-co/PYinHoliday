@@ -37,6 +37,8 @@ public class UserController {
 
     @RequestMapping(value = "/joinProject/{id}", method = RequestMethod.GET)
     public String  joinProjectId(@PathVariable("id") Integer projectid, HttpSession httpSession, ModelMap modelMap){
+        String tmp = loginfirst(httpSession);
+        if (tmp != null)    return tmp;
         ProjectEntity project = projectRepository.findOne(projectid);
         modelMap.addAttribute("project",project);
         return "user/joinProject";
@@ -46,6 +48,8 @@ public class UserController {
     public String joinProjectPost(@ModelAttribute("project") ProjectEntity projectEntity, HttpSession httpSession){
         UserEntity user = (UserEntity) httpSession.getAttribute("user");
         ProjectEntity project = projectRepository.findByPP(projectEntity.getId(),projectEntity.getPasswd());
+        String tmp = loginfirst(httpSession);
+        if (tmp != null)    return tmp;
         if (user != null && project != null){
             if(proUserRepository.findByPU(project.getId(),user.getId()) == null) {
                 ProUserEntity pu = new ProUserEntity();
@@ -59,7 +63,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/createProject", method = RequestMethod.GET)
-    public String createProject(){
+    public String createProject(HttpSession httpSession){
+        String tmp = loginfirst(httpSession);
+        if (tmp != null)    return tmp;
         return "user/createProject";
     }
 
@@ -69,7 +75,9 @@ public class UserController {
         projectEntity.setTime(new java.sql.Timestamp(System.currentTimeMillis()));
         projectEntity = projectRepository.save(projectEntity);
         projectRepository.flush();
-        System.out.print("====="+projectEntity.getId()+"-----");
+        //System.out.print("====="+projectEntity.getId()+"-----");
+        String tmp = loginfirst(httpSession);
+        if (tmp != null)    return tmp;
         if (user != null && projectEntity != null) {
                 ProUserEntity pu = new ProUserEntity();
                 pu.setUser(user.getId());
@@ -79,6 +87,15 @@ public class UserController {
         }
 
         return "redirect:/";
+    }
+
+    public String loginfirst(HttpSession httpSession){
+        UserEntity user = (UserEntity)httpSession.getAttribute("user");
+        if(user != null){
+            return null;
+        }else{
+            return "redirect:/login";
+        }
     }
 
 }
