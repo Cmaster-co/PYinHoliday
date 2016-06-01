@@ -16,6 +16,9 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
     @Query("select u from UserEntity u where u.username = ?1 and u.passwd = ?2")
     UserEntity findByUP(String username, String passwd);
 
+    @Query("select u from UserEntity u where u.username = ?1")
+    UserEntity findByUname(String username);
+
     @Modifying
     @Transactional
     @Query("update UserEntity us set us.passwd=:upasswd, us.age=:uage, us.city=:ucity, us.sex=:usex where us.id=:uid")

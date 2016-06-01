@@ -62,10 +62,28 @@ public class MainController {
             if (ue.getAdmin() == 1) return "redirect:/admin/admin";
             else return "redirect:/";
         }else{
-            return "/failLogin";
+            return "redirect:/failLogin";
         }
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(){
+        return "register";
+    }
+
+    @RequestMapping(value = "/registerP", method = RequestMethod.POST)
+    public String regitterPost(@ModelAttribute("user") UserEntity userEntity, ModelMap modelMap){
+        userEntity.setAdmin(0);
+        UserEntity user = userRepository.findByUname(userEntity.getUsername());
+        if(user == null){
+            userRepository.save(userEntity);
+            userRepository.flush();
+            return "/registerSuccess";
+        }else{
+            modelMap.addAttribute("error","username alreadly existed");
+            return "register";
+        }
+    }
 
     @RequestMapping(value = "/failLogin", method = RequestMethod.GET)
     public String failLogin(ModelMap model){
@@ -74,7 +92,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "/logoff", method = RequestMethod.GET)
-    public String logoff(ModelMap model){
-        return "login";
+    public String logoff(HttpSession httpSession, ModelMap model){
+        httpSession.setAttribute("user",null);
+        return "redirect:/";
     }
 }

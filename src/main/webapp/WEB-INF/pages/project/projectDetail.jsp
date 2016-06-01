@@ -36,14 +36,15 @@
                     <ul class="sub-menu">
                         <li id="menu-item-3218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3218"><a href="/createProject">创建小组</a></li>
                         <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="/joinProject/">加入小组</a></li>
-                        <li id="menu-item-3222" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3222"><a href="http://www.yzipi.com/category/experience/marketing">营销推广</a></li>
-                        <li id="menu-item-3186" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3186"><a href="http://www.yzipi.com/category/experience/view">名家看点</a></li>
-                        <li id="menu-item-3219" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3219"><a href="http://www.yzipi.com/category/experience/entrepreneurship-manage">创业/管理</a></li>
-                        <li id="menu-item-3221" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3221"><a href="http://www.yzipi.com/category/experience/development">职场成长</a></li>
                     </ul>
                 </li>
                 <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a title="随机热文" href="http://www.yzipi.com/hotrandom">热文</a></li>
-                <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="http://www.yzipi.com/category/youshuo">柚说</a></li>
+                <c:if test="${empty sessionScope.user}">
+                    <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="/register">注册</a></li>
+                </c:if>
+                <c:if test="${!empty sessionScope.user}">
+                    <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="/logout">退出</a></li>
+                </c:if>
                 <li id="menu-item-3145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3145"><a href="http://www.yzipi.com/searchform">搜索</a></li>
             </ul>    </nav>
         <!--header-nav-->

@@ -18,7 +18,7 @@
 <c:if test="${not empty error}">
     <div class="errorblock">
         Login error : Please try again.<br />Root Cause:
-            ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+            ${error}
     </div>
 </c:if>
 

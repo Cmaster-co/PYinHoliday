@@ -22,6 +22,7 @@ public class UserEntity {
     private Collection<ProUserEntity> proUsersById;
 
     @Id
+    @GeneratedValue
     @Column(name = "Id", nullable = false)
     public int getId() {
         return id;

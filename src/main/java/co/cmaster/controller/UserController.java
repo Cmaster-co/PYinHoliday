@@ -85,7 +85,6 @@ public class UserController {
                 pu.setAdmin(1);
                 proUserRepository.saveAndFlush(pu);
         }
-
         return "redirect:/";
     }
 
