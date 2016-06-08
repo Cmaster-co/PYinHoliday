@@ -11,7 +11,7 @@
     <title></title>
 </head>
 <body>
-<form action="uploadP" method="post" enctype="multipart/form-data">
+<form action="/uploadP" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td width="100" align="right">照片：</td>

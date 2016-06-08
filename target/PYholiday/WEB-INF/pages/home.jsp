@@ -75,9 +75,9 @@
                         <a href="/joinProject/${project.id}" rel="category tag">加入小组</a></address>
                 </div>
                 <span class="titleimg"><a href="/upload/${project.id}" target="_blank">
-                    <img width="270" height="165" src="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr-270x165.png" class="attachment-thumbnail wp-post-image" alt="grgrgr" />            </a> </span>
+                    <img width="270" height="165" src="images/${project.pic}" class="attachment-thumbnail wp-post-image" alt="grgrgr" />            </a> </span>
 
-                    <p>${project.more}</p>
+                    <p>${project.info}</p>
                     <div class="clear"></div>
                 </section>
                 <div class="clear"></div>

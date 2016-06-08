@@ -78,8 +78,8 @@
             </div>
             </header>
             <div class="content-text">
-                <p><a href="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr.png"><img src="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr.png" alt="grgrgr" width="1000" height="610" class="aligncenter size-full wp-image-3705"></a></p>
-                <p>${project.more}</p>
+                <p><a href="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr.png"><img src="images/${project.pic}" alt="grgrgr" width="1000" height="610" class="aligncenter size-full wp-image-3705"></a></p>
+                <p>${project.info}</p>
             </div>
             <!--content_text-->
             <div class="post-like">

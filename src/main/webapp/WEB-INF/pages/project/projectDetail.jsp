@@ -38,7 +38,7 @@
                         <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="/joinProject/">加入小组</a></li>
                     </ul>
                 </li>
-                <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a title="随机热文" href="http://www.yzipi.com/hotrandom">热文</a></li>
+                <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a title="随机热文" href="http://www.yzipi.com/hotrandom">我</a></li>
                 <c:if test="${empty sessionScope.user}">
                     <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="/register">注册</a></li>
                 </c:if>
@@ -78,8 +78,8 @@
             </div>
             </header>
             <div class="content-text">
-                <p><a href="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr.png"><img src="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr.png" alt="grgrgr" width="1000" height="610" class="aligncenter size-full wp-image-3705"></a></p>
-                <p>${project.more}</p>
+                <p><a href="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr.png"><img src="images/${project.pic}" alt="grgrgr" width="1000" height="610" class="aligncenter size-full wp-image-3705"></a></p>
+                <p>${project.info}</p>
             </div>
             <!--content_text-->
             <div class="post-like">

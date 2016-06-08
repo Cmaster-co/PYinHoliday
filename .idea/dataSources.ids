@@ -194,8 +194,9 @@
       <column id="46" parent="7" name="location">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="47" parent="7" name="more">
+      <column id="47" parent="7" name="pic">
         <data-type>varchar(255)</data-type>
+        <default-expression>&apos;2.jpg&apos;</default-expression>
       </column>
       <column id="48" parent="7" name="time">
         <mandatory>1</mandatory>
@@ -207,61 +208,64 @@
         <data-type>int(11)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <key id="50" parent="7" name="PRIMARY">
+      <column id="50" parent="7" name="info">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="51" parent="7" name="PRIMARY">
         <columns>Id</columns>
         <primary>1</primary>
       </key>
-      <column id="51" parent="8" name="Id">
+      <column id="52" parent="8" name="Id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="52" parent="8" name="username">
+      <column id="53" parent="8" name="username">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="53" parent="8" name="passwd">
+      <column id="54" parent="8" name="passwd">
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="54" parent="8" name="age">
+      <column id="55" parent="8" name="age">
         <data-type>int(11)</data-type>
       </column>
-      <column id="55" parent="8" name="sex">
+      <column id="56" parent="8" name="sex">
         <data-type>int(11)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <column id="56" parent="8" name="city">
+      <column id="57" parent="8" name="city">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="57" parent="8" name="info">
+      <column id="58" parent="8" name="info">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="58" parent="8" name="admin">
+      <column id="59" parent="8" name="admin">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="59" parent="8" name="status">
+      <column id="60" parent="8" name="status">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <column id="60" parent="8" name="more">
+      <column id="61" parent="8" name="more">
         <data-type>varchar(255)</data-type>
       </column>
-      <index id="61" parent="8" name="u">
+      <index id="62" parent="8" name="u">
         <columns>username</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="62" parent="8" name="PRIMARY">
+      <key id="63" parent="8" name="PRIMARY">
         <columns>Id</columns>
         <primary>1</primary>
       </key>
-      <key id="63" parent="8" name="u">
+      <key id="64" parent="8" name="u">
         <columns>username</columns>
         <underlying-index>u</underlying-index>
       </key>

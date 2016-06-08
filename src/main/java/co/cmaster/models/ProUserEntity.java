@@ -80,7 +80,7 @@ public class ProUserEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "project", referencedColumnName = "Id", nullable = false, insertable = false, updatable = false)
+    @JoinColumns({@JoinColumn(name = "project", referencedColumnName = "Id", nullable = false, insertable = false, updatable = false)})
     public ProjectEntity getProjectByProject() {
         return projectByProject;
     }
@@ -90,7 +90,7 @@ public class ProUserEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "Id", nullable = false, insertable = false, updatable = false)
+    @JoinColumns({@JoinColumn(name = "user", referencedColumnName = "Id", nullable = false, insertable = false, updatable = false)})
     public UserEntity getUserByUser() {
         return userByUser;
     }

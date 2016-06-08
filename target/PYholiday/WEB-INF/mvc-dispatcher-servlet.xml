@@ -7,7 +7,7 @@
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
     <context:component-scan base-package="co.cmaster.controller" />
-    <mvc:default-servlet-handler />
+    <mvc:resources mapping="/images/**" location="/WEB-INF/images/" cache-period="31556926"/>
     <mvc:annotation-driven />
     <jpa:repositories base-package="co.cmaster.repository"/>
 
@@ -27,5 +27,10 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <beans>
+        <bean id="multipartResolver"
+              class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+        <!-- Declare explicitly, or use <context:annotation-config/> -->
+    </beans>
 
 </beans>

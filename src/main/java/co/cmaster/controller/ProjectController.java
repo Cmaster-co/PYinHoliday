@@ -12,14 +12,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by Administrator on 2016/5/27 0027.
@@ -55,16 +53,23 @@ public class ProjectController {
     @RequestMapping(value = "/uploadP", method = RequestMethod.POST)
     public void uploadPic(@RequestParam("pic")MultipartFile file, HttpServletRequest request, HttpServletResponse response, HttpSession httpSession) throws IOException{
         String fileName = file.getOriginalFilename();
-        File tempFile = new File("/upload/",new Date().getTime()+String.valueOf(fileName));
+        String path = request.getSession().getServletContext().getRealPath("/WEB-INF/images/");
+        String filename = Long.toString(new Date().getTime());
+        path += "\\" + filename + ".jpg";
+        //path = path.replace("\\","/");
+        System.out.print(path);
+        File tempFile = new File(path);
+        //System.out.print(tempFile.getAbsolutePath());
         if (!tempFile.exists()) {
             tempFile.createNewFile();
+            //System.out.print(tempFile.getAbsolutePath());
         }
         file.transferTo(tempFile);
         ProjectEntity projectEntity = projectRepository.findOne((Integer) httpSession.getAttribute("projectId"));
-        projectEntity.setMore(tempFile.getName());
+        projectEntity.setPic(tempFile.getName());
         projectRepository.save(projectEntity);
         response.setContentType("text/html;charset=utf8");
-        response.getWriter().write("<img src='"+tempFile.getName()+"'/>");
+        response.getWriter().write("<img src='images/"+tempFile.getName()+"'/>");
     }
 
 }

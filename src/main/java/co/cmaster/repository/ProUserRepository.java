@@ -1,8 +1,6 @@
 package co.cmaster.repository;
 
 import co.cmaster.models.ProUserEntity;
-import co.cmaster.models.ProjectEntity;
-import co.cmaster.models.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
