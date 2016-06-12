@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -29,7 +30,7 @@
                 ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
         </div>
     </c:if>
-    <form:form action="/admin/users/addP" method="post" commandName="user" role="form">
+    <form:form action="/registerP" method="post" commandName="user" role="form">
         <div class="form-group">
             <label for="username">name:</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Enter Nickname:"/>

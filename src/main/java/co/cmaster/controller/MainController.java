@@ -78,7 +78,7 @@ public class MainController {
         if(user == null){
             userRepository.save(userEntity);
             userRepository.flush();
-            return "/registerSuccess";
+            return "redirect:/";
         }else{
             modelMap.addAttribute("error","username alreadly existed");
             return "register";
