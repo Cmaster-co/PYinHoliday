@@ -14,18 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
-
-/**
- * Created by Administrator on 2016/5/27 0027.
- */
 @Controller
 public class AdminController {
     @Autowired
     UserRepository userRepository;
-
     @Autowired
     ProjectRepository projectRepository;
-
     @RequestMapping(value = "/admin/admin", method = RequestMethod.GET)
     public String AdminIndex(ModelMap modelMap, HttpSession httpSession){
         String tmp = loginAdminFirst(httpSession);

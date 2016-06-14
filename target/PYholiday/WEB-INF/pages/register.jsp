@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <label for="passwd">Password:</label>
-            <input type="text" class="form-control" id="passwd" name="passwd" placeholder="Enter Password:"/>
+            <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Enter Password:"/>
         </div>
         <div class="form-group">
             <label for="age">age:</label>

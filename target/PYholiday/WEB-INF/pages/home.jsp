@@ -27,25 +27,25 @@
 <header id="header-web">
     <div class="header-main">
         <hgroup class="logo">
-            <h1><a href="http://www.yzipi.com/" title="柚子皮" rel="home"><img src="http://www.yzipi.com/wp-content/themes/yzipi/images/logo.png" alt="柚子皮"></a></h1>
+            <h1><a href="#" title="柚子皮" rel="home"><img src="http://www.yzipi.com/wp-content/themes/yzipi/images/logo.png" alt="柚子皮"></a></h1>
         </hgroup>
         <!--logo-->
         <nav class="header-nav">
-            <ul id="menu-nav" class="menu"><li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-4"><a href="http://www.yzipi.com/">首页</a></li>
-                <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-31"><a title="运营经验" href="http://www.yzipi.com/category/experience">小组</a>
+            <ul id="menu-nav" class="menu"><li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-4"><a href="/">首页</a></li>
+                <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-31"><a title="运营经验" href="#">小组</a>
                     <ul class="sub-menu">
                         <li id="menu-item-3218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3218"><a href="/createProject">创建小组</a></li>
-                        <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="/joinProject/">加入小组</a></li>
+
                     </ul>
                 </li>
-                <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a title="随机热文" href="http://www.yzipi.com/hotrandom">我</a></li>
+                <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a title="随机热文" href="#">我</a></li>
                 <c:if test="${empty sessionScope.user}">
                     <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="/register">注册</a></li>
                 </c:if>
                 <c:if test="${!empty sessionScope.user}">
                     <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="/logoff">退出</a></li>
                 </c:if>
-                <li id="menu-item-3145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3145"><a href="http://www.yzipi.com/searchform">搜索</a></li>
+                <li id="menu-item-3145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3145"><a href="#">搜索</a></li>
             </ul>    </nav>
         <!--header-nav-->
 
@@ -55,7 +55,7 @@
 <!--header-web-->
 <div id="main">
     <div id="soutab">
-        <form method="get" class="search" action="http://www.yzipi.com/" >
+        <form method="get" class="search" action="#" >
             <input class="text" type="text" name="s" placeholder=" 请输入关键词" value="">
             <input class="butto" value="" type="submit">
         </form>
@@ -64,18 +64,18 @@
         <c:if test="${!empty projectList}">
             <c:forEach items="${projectList}" var="project">
                 <section class="list">
-                    <a href="http://www.yzipi.com/3699.htm#comments" class="up" >3</a>      <div class="mecc">
+                    <a href="#" class="up" >3</a>      <div class="mecc">
                     <h2 class="mecctitle"> <a href="/project/${project.id}" >
                         ${project.proname}          </a> </h2>
                     <address class="meccaddress">
                         <time>
                             ${project.time}        </time>
                         -
-                        <a href="http://www.yzipi.com/category/experience/development" rel="category tag">${project.location}</a>        -
+                        <a href="#" rel="category tag">${project.location}</a>        -
                         <a href="/joinProject/${project.id}" rel="category tag">加入小组</a></address>
                 </div>
                 <span class="titleimg"><a href="/upload/${project.id}" target="_blank">
-                    <img width="270" height="165" src="images/${project.pic}" class="attachment-thumbnail wp-post-image" alt="grgrgr" />            </a> </span>
+                    <img width="270" height="165" src="/images/${project.pic}" class="attachment-thumbnail wp-post-image" alt="grgrgr" />            </a> </span>
 
                     <p>${project.info}</p>
                     <div class="clear"></div>
@@ -85,13 +85,8 @@
             </c:forEach>
         </c:if>
         <!--list-->
-        <div class="pagenavi">
-            <span class="page-numbers">1 / 36 </span> <span class='page-numbers current'>1</span> <a class='page-numbers' href='http://www.yzipi.com/page/2' title='第 2 页'>2</a> <a class='page-numbers' href='http://www.yzipi.com/page/3' title='第 3 页'>3</a> <span class="page-numbers">...</span><a class='page-numbers' href='http://www.yzipi.com/page/36' title='最末页'>36</a> <a class='page-numbers' href='http://www.yzipi.com/page/2' title='下一页'>下一页</a>     </div>
-        <!--Page End-->
-        <nav class="navigation">
-            <div class="nav-previous"><a href="http://www.yzipi.com/page/2" >下一页</a></div>
 
-        </nav><!-- .navigation -->
+        <!--Page End-->
         <!--phonepage-->
     </div>
     <!--Container-->

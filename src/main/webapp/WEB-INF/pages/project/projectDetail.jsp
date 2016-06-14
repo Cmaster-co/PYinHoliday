@@ -27,25 +27,25 @@
 <header id="header-web">
     <div class="header-main">
         <hgroup class="logo">
-            <h1><a href="http://www.yzipi.com/" title="柚子皮" rel="home"><img src="http://www.yzipi.com/wp-content/themes/yzipi/images/logo.png" alt="柚子皮"></a></h1>
+            <h1><a href="#" title="柚子皮" rel="home"><img src="http://www.yzipi.com/wp-content/themes/yzipi/images/logo.png" alt="柚子皮"></a></h1>
         </hgroup>
         <!--logo-->
         <nav class="header-nav">
-            <ul id="menu-nav" class="menu"><li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-4"><a href="http://www.yzipi.com/">首页</a></li>
-                <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-31"><a title="运营经验" href="http://www.yzipi.com/category/experience">小组</a>
+            <ul id="menu-nav" class="menu"><li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-4"><a href="/">首页</a></li>
+                <li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-31"><a title="运营经验" href="#">小组</a>
                     <ul class="sub-menu">
                         <li id="menu-item-3218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3218"><a href="/createProject">创建小组</a></li>
-                        <li id="menu-item-3220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3220"><a href="/joinProject/">加入小组</a></li>
+
                     </ul>
                 </li>
-                <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a title="随机热文" href="http://www.yzipi.com/hotrandom">我</a></li>
+                <li id="menu-item-1958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958"><a title="随机热文" href="#">我</a></li>
                 <c:if test="${empty sessionScope.user}">
                     <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="/register">注册</a></li>
                 </c:if>
                 <c:if test="${!empty sessionScope.user}">
                     <li id="menu-item-3243" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3243"><a href="/logout">退出</a></li>
                 </c:if>
-                <li id="menu-item-3145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3145"><a href="http://www.yzipi.com/searchform">搜索</a></li>
+                <li id="menu-item-3145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3145"><a href="#">搜索</a></li>
             </ul>    </nav>
         <!--header-nav-->
 
@@ -55,7 +55,7 @@
 <!--header-web-->
 <div id="main">
     <div id="soutab">
-        <form method="get" class="search" action="http://www.yzipi.com/" >
+        <form method="get" class="search" action="#" >
             <input class="text" type="text" name="s" placeholder=" 请输入关键词" value="">
             <input class="butto" value="" type="submit">
         </form>
@@ -64,8 +64,8 @@
         <!--mbx-->
         <article class="content">
             <header class="contenttitle">
-                <a href="http://www.yzipi.com/3699.htm#comments" class="counte">3</a>          <div class="mscc">
-                <h1 class="mscctitle"> <a href="http://www.yzipi.com/3699.htm">
+                <a href="#" class="counte">3</a>          <div class="mscc">
+                <h1 class="mscctitle"> <a href="#">
                     ${project.proname}            </a> </h1>
                 <address class="msccaddress ">
                     <em>已有
@@ -78,7 +78,7 @@
             </div>
             </header>
             <div class="content-text">
-                <p><a href="http://www.yzipi.com/wp-content/uploads/2016/04/grgrgr.png"><img src="images/${project.pic}" alt="grgrgr" width="1000" height="610" class="aligncenter size-full wp-image-3705"></a></p>
+                <p><a href="/images/${project.pic}"><img src="/images/${project.pic}" alt="grgrgr" width="1000" height="610" class="aligncenter size-full wp-image-3705"></a></p>
                 <p>${project.info}</p>
             </div>
             <!--content_text-->
@@ -129,61 +129,6 @@
             </ul>
         </div>
         <!--相关文章-->
-        <div class="comment" id="comments">
-
-
-            <!-- You can start editing here. -->
-
-
-            <ol id="comment1">
-                <li id="comment-13197">
-			 <span><a href="" class="avatar" target="_blank">
-				<img src="https://secure.gravatar.com/avatar/8516d712dca83c8169da31c6afda83ca?s=86" class="avatar avatar-86" height="86" width="86">			</a></span>
-
-                    <div class="mhcc">
-                        <address>
-                            <font color="">匿名</font> -
-                            2016.04.05				</address>
-                        <p>努力一定要选择正确的方向</p>
-
-                    </div>
-                </li><!-- #comment-## -->
-                <li id="comment-13191">
-			 <span><a href="" class="avatar" target="_blank">
-				<img src="https://secure.gravatar.com/avatar/8516d712dca83c8169da31c6afda83ca?s=86" class="avatar avatar-86" height="86" width="86">			</a></span>
-
-                    <div class="mhcc">
-                        <address>
-                            <font color="">匿名</font> -
-                            2016.04.04				</address>
-                        <p>方向错了，一切都是在浪费时间和精力</p>
-
-                    </div>
-                </li><!-- #comment-## -->
-                <li id="comment-13190">
-			 <span><a href="" class="avatar" target="_blank">
-				<img src="https://secure.gravatar.com/avatar/8516d712dca83c8169da31c6afda83ca?s=86" class="avatar avatar-86" height="86" width="86">			</a></span>
-
-                    <div class="mhcc">
-                        <address>
-                            <font color="">匿名</font> -
-                            2016.04.04				</address>
-                        <p>盲目努力是最愚蠢的事，但是那种执着还是让人尊重</p>
-
-                    </div>
-                </li><!-- #comment-## -->
-            </ol>
-            <div id="respond">
-                <form action="http://www.yzipi.com/wp-comments-post.php" method="post" id="commentform">
-                    <input type="text" name="author" class="inputt" size="22" tabindex="1" value="匿名" onfocus="this.value='';" onblur="if(this.value==''){this.value='匿名';}">
-                    <input type="text" name="email" class="inputt" size="22" tabindex="2" value="hao@yzipi.com" onfocus="this.value='';" onblur="if(this.value==''){this.value='hao@yzipi.com';}">
-                    <textarea name="w" id="comment" rows="3" tabindex="5" placeholder="你有什么要说的 ..."></textarea><textarea name="comment" cols="100%" rows="4" style="display:none"></textarea>
-                    <input name="submit" type="submit" id="submit" tabindex="2" value="提交评论">
-                    <input type="hidden" name="comment_post_ID" value="3699" id="comment_post_ID">
-                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                </form>
-            </div>
-        </div>
         <!-- .nav-single -->
     </div>
     <!--Container-->
